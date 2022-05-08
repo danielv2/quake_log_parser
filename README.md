@@ -14,6 +14,11 @@
 bundle install
 rails db:create db:migrate db:seed
 rails s
+
+------ tests ------
+
+rspec ./spec
+
 ```
 
 - Using Docker
@@ -22,6 +27,10 @@ rails s
 docker-compose build
 docker-compose run web rake db:create db:migrate db:seed
 docker-compose up
+
+------ tests ------
+
+docker-compose run web rspec ./spec
 ```
 
 The project will run http://localhost:3000/admin
