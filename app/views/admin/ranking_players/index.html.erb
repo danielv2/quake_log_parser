@@ -1,0 +1,19 @@
+<% content_for(:title, "Ranking Players") %>
+
+<% headers = %w[Player Total_Kills] %>
+
+<%= render layout: "layout" do %>
+  <table class="trestle-table">
+    <tr>
+      <%- headers.each do |header| -%>
+        <th><%= header %></th>
+      <%- end -%>
+    </tr>
+      <%- @ranking_players.each do |item| -%>
+    <tr>
+      <td><%= item.name %></td>
+      <td><%= item.total_kills %></td>
+    </tr>
+    <%- end -%>
+  </table>
+<% end %>
